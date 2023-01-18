@@ -1,0 +1,17 @@
+<div class="card mb-4 shadow-sm">
+    <img class="bd-placeholder-img card-img-top" width="100%" 
+    [src]="productoItem.imageUrl"/>
+    <div class="card-body">
+        <p>
+            <strong>{{ productoItem.price|currency:'S/. '}}</strong>
+        </p>
+        <strong><p class="card-text" style="font-size: large;">{{ productoItem.name}}</p></strong>
+        <p class="card-text">{{ productoItem.description | slice: 0:50}}</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-primary product-btn" (click)="handleAddToCart()">Añadir al Carrito</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary product-btn">Ver Detalles</button>
+            </div>
+        </div>
+    </div>
+</div> 
