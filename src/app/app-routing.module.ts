@@ -1,9 +1,9 @@
 import { ShoppingCartComponent } from './componentes/shopping-cart/shopping-cart.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LogComponent } from './components/log/log.component';
-import { RegistroComponent } from './components/registro/registro.component';
-import { NotFoundComponent } from './components/shared/not-found/not-found.component';
+import { LogComponent } from './componentes/log/log.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { NotFoundComponent } from './componentes/shared/not-found/not-found.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'/compra', pathMatch:'full'},

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Producto } from '../models/producto';
 import { Observable } from 'rxjs';
 import { productUrl } from 'src/app/config/api';
@@ -9,9 +9,18 @@ import { productUrl } from 'src/app/config/api';
 })
 export class ProductService {
 
+  url='http://localhost:9000/productos'
+
+
   constructor(private http:HttpClient) { }
 
-  getProducts():Observable<Producto[]>{
-    return this.http.get<Producto[]>(productUrl);
+  getProducts(){
+
+    let header=new HttpHeaders()
+    .set('Type-content', 'application/json')
+
+    return  this.http.get(this.url,{
+      headers:header
+    });
   }
 }

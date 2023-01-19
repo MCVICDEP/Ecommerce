@@ -1,16 +1,16 @@
 import { Producto } from './producto';
 export class CarroItem {
     id: number;
-    productId: number;
-    productName: string;
+    idproducto: number;
+    nom_producto: string;
     qty: number;
-    price: number;
+    precio_producto: number;
 
     constructor(id: number, product: Producto, qty = 1) {
         this.id = id;
-        this.productId = product.id;
-        this.productName = product.name;
-        this.price = product.price;
+        this.idproducto = product.idproducto;
+        this.nom_producto = product.nom_producto;
+        this.precio_producto = product.precio_producto;
         this.qty = qty;
     }
 }

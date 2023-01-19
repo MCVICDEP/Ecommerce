@@ -1,15 +1,23 @@
 export class Producto {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    imageUrl: string;
+    idproducto: number;
+    cod_producto: string;
+    nom_producto: string;
+    desc_producto: string;
+    precio_producto: number;
+    cant_producto: number;
+    img_producto: string;
+    flag:number;
 
-    constructor(id:any, name:any, description='', price=0, imageUrl='https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Rubik%27s_cube_almost_solved.svg/1200px-Rubik%27s_cube_almost_solved.svg.png') {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.imageUrl = imageUrl;
+    constructor(idproducto:any, cod_producto="", 
+    nom_producto="", desc_producto="", precio_producto=0, 
+    cant_producto=0, img_producto="", flag=0) {
+        this.idproducto = idproducto;
+        this.cod_producto= cod_producto;
+        this.nom_producto=nom_producto;
+        this.desc_producto=desc_producto;
+        this.precio_producto=precio_producto;
+        this.cant_producto=cant_producto;
+        this.img_producto=img_producto;
+        this.flag=flag
     }
 }

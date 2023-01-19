@@ -21,7 +21,7 @@ export class CarroService {
           let productoExistente=false;
 
         for(let i in carroItem){
-          if (carroItem[i].productId===item.product.id){
+          if (carroItem[i].idproducto===item.product.id){
             carroItem[i].qty++
             productoExistente=true
             break;
@@ -39,5 +39,9 @@ export class CarroService {
 
   addProductToCart(product:Producto):Observable<any>{
     return this.http.post(carritoUrl,{product});
+  }
+
+  borrar_carrito(){
+    this.getCarroItems.length===0;
   }
 }

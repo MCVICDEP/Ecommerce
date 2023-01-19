@@ -25,7 +25,7 @@ export class CarritoComponent implements OnInit {
   }
 
   handleSubscription(){
-    this.msg.getMsg().subscribe((product: Producto) => {
+    this.msg.getMsg().subscribe((producto: Producto) => {
       this.cargarItems();
     })
   }
@@ -42,5 +42,9 @@ export class CarritoComponent implements OnInit {
         item => {
           this.carritoTotal += (item.qty * item.price)
         })
+    }
+
+    borrar_carrito(){
+      this.borrar_carrito.length===0;
     }
   }

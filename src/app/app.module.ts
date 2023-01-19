@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './componentes/shared/header/header.component';
@@ -13,9 +12,9 @@ import { ListaComponent } from './componentes/shopping-cart/lista/lista.componen
 import { CarritoComponent } from './componentes/shopping-cart/carrito/carrito.component';
 import { ItemComponent } from './componentes/shopping-cart/carrito/item/item.component';
 import { ProductoComponent } from './componentes/shopping-cart/lista/producto/producto.component';
-import { LogComponent } from './components/log/log.component';
-import { RegistroComponent } from './components/registro/registro.component';
-import { NotFoundComponent } from './components/shared/not-found/not-found.component';
+import { LogComponent } from './componentes/log/log.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { NotFoundComponent } from './componentes/shared/not-found/not-found.component';
 
 @NgModule({
   declarations: [
