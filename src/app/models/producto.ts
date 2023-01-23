@@ -8,8 +8,8 @@ export class Producto {
     img_producto: string;
     flag:number;
 
-    constructor(idproducto:any, cod_producto="", 
-    nom_producto="", desc_producto="", precio_producto=0, 
+    constructor(idproducto:any, cod_producto="",
+    nom_producto="", desc_producto="", precio_producto=0,
     cant_producto=0, img_producto="", flag=0) {
         this.idproducto = idproducto;
         this.cod_producto= cod_producto;
