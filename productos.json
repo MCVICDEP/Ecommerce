@@ -64,34 +64,7 @@
       "price": 1899
     }
   ],
-  "carrito": [
-    {
-      "product": {
-        "idproducto": 1,
-        "cod_producto": "19012023-1",
-        "nom_producto": "Xiaomi Poco X3 Pro",
-        "desc_producto": "MEMORIA INTERNA 256GB / RAM 8GB",
-        "precio_producto": 1099,
-        "cant_producto": 18,
-        "img_producto": "https://umidigiperu.pe/wp-content/uploads/2021/10/poco_x3_pro_8gb_256gb_umidigitiendaperu_00.png",
-        "flag": 0
-      },
-      "id": 1
-    },
-    {
-      "product": {
-        "idproducto": 2,
-        "cod_producto": "19012023-2",
-        "nom_producto": "Xiaomi Poco M4",
-        "desc_producto": "MEMORIA INTERNA 256GB / RAM 6GB",
-        "precio_producto": 1199,
-        "cant_producto": 18,
-        "img_producto": "https://d20f60vzbd93dl.cloudfront.net/uploads/tienda_016296/tienda_016296_673a5cf33121a4a3d4b4b9bff7ce31c12d95f0e6_producto_large.png",
-        "flag": 0
-      },
-      "id": 2
-    }
-  ],
+  "carrito": [],
   "comments": [
     {
       "id": 1,

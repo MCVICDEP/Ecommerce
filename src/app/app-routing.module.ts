@@ -1,3 +1,4 @@
+import { DetallesComponent } from './componentes/shopping-cart/lista/producto/detalles/detalles.component';
 import { ShoppingCartComponent } from './componentes/shopping-cart/shopping-cart.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path:'login', component: LogComponent},
   {path: 'register', component: RegistroComponent},
   {path: 'compra', component: ShoppingCartComponent},
+  {path: 'detalle', component: DetallesComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

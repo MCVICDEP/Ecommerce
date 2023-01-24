@@ -15,6 +15,7 @@ import { ProductoComponent } from './componentes/shopping-cart/lista/producto/pr
 import { LogComponent } from './componentes/log/log.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { NotFoundComponent } from './componentes/shared/not-found/not-found.component';
+import { DetallesComponent } from './componentes/shopping-cart/lista/producto/detalles/detalles.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NotFoundComponent } from './componentes/shared/not-found/not-found.comp
     ProductoComponent,
     LogComponent,
     RegistroComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DetallesComponent
   ],
   imports: [
     BrowserModule,

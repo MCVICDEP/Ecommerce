@@ -22,7 +22,7 @@ export class CarroService {
           let productoExistente = false;
 
           for (let i in carroItem) {
-            if (carroItem[i].idproducto === item.product.idproducto) {
+            if (carroItem[i].idProducto === item.product.idProducto) {
               carroItem[i].qty++
               productoExistente = true
               break;
@@ -30,7 +30,7 @@ export class CarroService {
           }
 
           if (!productoExistente) {
-            carroItem.push(new CarroItem(item.idproducto, item.product))
+            carroItem.push(new CarroItem(item.idProducto, item.product))
           }
         }
         console.log(carroItem)
@@ -48,12 +48,12 @@ export class CarroService {
   //   return this.http.delete(this.urlApi);    
   // }
   
-  removeall(idproducto:number){
+  removeall(idProducto:number){
     
-    return this.http.delete(carritoUrl+"/"+idproducto)    
+    return this.http.delete(carritoUrl+"/"+idProducto)    
   }
 
-  removeProduct(idproducto:string){
-    this.http.delete(carritoUrl+"/"+idproducto).subscribe();
+  removeProduct(idProducto:string){
+    this.http.delete(carritoUrl+"/"+idProducto).subscribe();
   }
 }

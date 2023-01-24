@@ -1,23 +1,23 @@
 export class Producto {
-    idproducto: number;
-    cod_producto: string;
-    nom_producto: string;
-    desc_producto: string;
-    precio_producto: number;
-    cant_producto: number;
-    img_producto: string;
+    idProducto: number;
+    cod_Producto: string;
+    nom_Producto: string;
+    desc_Producto: string;
+    precio_Producto: number;
+    cant_Producto: number;
+    img_Producto: string;
     flag:number;
 
-    constructor(idproducto:any, cod_producto="",
-    nom_producto="", desc_producto="", precio_producto=0,
-    cant_producto=0, img_producto="", flag=0) {
-        this.idproducto = idproducto;
-        this.cod_producto= cod_producto;
-        this.nom_producto=nom_producto;
-        this.desc_producto=desc_producto;
-        this.precio_producto=precio_producto;
-        this.cant_producto=cant_producto;
-        this.img_producto=img_producto;
+    constructor(idProducto=0, cod_Producto="",
+    nom_Producto="", desc_Producto="", precio_Producto=0,
+    cant_Producto=0, img_Producto="", flag=0) {
+        this.idProducto = idProducto;
+        this.cod_Producto= cod_Producto;
+        this.nom_Producto=nom_Producto;
+        this.desc_Producto=desc_Producto;
+        this.precio_Producto=precio_Producto;
+        this.cant_Producto=cant_Producto;
+        this.img_Producto=img_Producto;
         this.flag=flag
     }
 }

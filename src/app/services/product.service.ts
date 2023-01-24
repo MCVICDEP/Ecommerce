@@ -9,7 +9,7 @@ import { productUrl } from 'src/app/config/api';
 })
 export class ProductService {
 
-  url='http://localhost:9000/productos'
+  url='https://localhost:44341/api/ProductoControlador'
 
 
   constructor(private http:HttpClient) { }
@@ -17,7 +17,7 @@ export class ProductService {
   getProducts(){
 
     let header=new HttpHeaders()
-    .set('Type-content', 'application/json')
+    .set('Content-Type', 'application/json')
 
     return  this.http.get(this.url,{
       headers:header

@@ -1,16 +1,16 @@
 <div class="card mb-4 shadow-sm">
     <img class="bd-placeholder-img card-img-top" width="100%" 
-    [src]="productoItem.img_producto"/>
+    [src]="productoItem.img_Producto"/>
     <div class="card-body">
         <p>
-            <strong>{{ productoItem.precio_producto|currency:'S/. '}}</strong>
+            <strong>{{ productoItem.precio_Producto|currency:'S/. '}}</strong>
         </p>
-        <strong><p class="card-text" style="font-size: large;">{{ productoItem.nom_producto}}</p></strong>
-        <p class="card-text">{{ productoItem.desc_producto | slice: 0:50}}</p>
+        <strong><p class="card-text" style="font-size: large;">{{ productoItem.nom_Producto}}</p></strong>
+        <p class="card-text">{{ productoItem.desc_Producto | slice: 0:50}}</p>
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-primary product-btn" (click)="handleAddToCart()">Añadir al Carrito</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary product-btn">Ver Detalles</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary product-btn" [routerLink]="['/detalle']">Ver Detalles</button>
             </div>
         </div>
     </div>
