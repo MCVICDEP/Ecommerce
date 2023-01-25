@@ -9,7 +9,7 @@ import { productUrl } from 'src/app/config/api';
 })
 export class ProductService {
 
-  url='https://localhost:44341/api/ProductoControlador'
+  url='http://localhost:9000/api/productos'
 
 
   constructor(private http:HttpClient) { }
