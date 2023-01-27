@@ -16,7 +16,7 @@ import { LogComponent } from './componentes/log/log.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { NotFoundComponent } from './componentes/shared/not-found/not-found.component';
 import { DetallesComponent } from './componentes/shopping-cart/lista/producto/detalles/detalles.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

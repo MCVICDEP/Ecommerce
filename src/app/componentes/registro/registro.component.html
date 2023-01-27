@@ -3,262 +3,130 @@
         <div class="wrapper wrapper--w680">
             <div class="card card-4" style="background-color: white; opacity : 0.97;">
                 <div class="card-header text-center">
-                    <h2>Registrarse</h2>
+                    <br>
+                    <h2>REGISTRO DE CLIENTE</h2>
+                    <br>
                 </div>
                 <div class="card-body">
-                    <form>
-                        <div class="row row-space">
-                            <div class="col-8">
-                                <div class="input-group">
-                                    <label class="label">DNI</label>
-                                    <input class="input--style-4 input-number" type="text" name="dni" id="dni"
-                                        autofocus="" maxlength="8">
-                                </div>
-                                <input id="result-username" name="result-username" type="hidden"
-                                    style="background-color: #e5e5e5;height: 0px;" readonly="">
-                            </div>
-                        </div>
+                    <form [formGroup]="registroForm" (ngSubmit)="registro()">
                         <div class="row row-space">
                             <div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-4" type="hidden" id="result"
-                                        style="background-color: #e5e5e5;" readonly="" value="0">
+                                <div class="input-group form-group">
+                                    <label class="label">DNI</label>
+                                    <input 
+                                    formControlName="dni" 
+                                    class="input--style-4 input-number alert alert-danger" 
+                                    type="text"
+                                    name="dni" 
+                                    id="dni" 
+                                    autofocus=""
+                                    />
+                                    <span class="invalid-feedback">DNI, no puede estar en blanco</span>
                                 </div>
                             </div>
                         </div>
                         <div class="row row-space">
                             <div class="col">
-                                <div class="input-group">
+                                <div class="input-group form-group">
                                     <label class="label">Nombres y Apellidos</label>
-                                    <input class="input--style-4" type="text" id="respuesta_nombres" name="nombres"
-                                        style="background-color: #e5e5e5;">
+                                    <input 
+                                    formControlName="nombres" 
+                                    class="input--style-4" 
+                                    type="text" 
+                                    id="nombres"
+                                    name="nombres"                                     
+                                    style="background-color: #e5e5e5"  
+                                    />
+                                    <span class="invalid-feedback">Nombres, no pueden estar en blanco</span>
                                 </div>
                             </div>
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
-                                <div class="input-group">
+                                <div class="input-group form-group">
                                     <label class="label">Correo Electrónico</label>
                                     <input class="input--style-4" type="email" id="email" name="email" maxlength="100"
                                         pattern="[a-zA-Z0-9!#$%&amp;'*_+-]([\.]?[a-zA-Z0-9!#$%&amp;'*_+-])+@[a-zA-Z0-9]([^@&amp;%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?"
-                                        disabled="">
+                                        formControlName="email"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="input-group">
+                                <div class="input-group form-group">
                                     <label class="label">Celular</label>
                                     <input class="input--style-4 input-number" type="text" id="celular" name="celular"
-                                        minlength="9" maxlength="9" disabled="">
+                                        minlength="9" maxlength="9" formControlName="celular"/>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row row-space">
                             <div class="col-2">
-                                <div class="input-group mayus">
+                                <label for="password"> Contraseña </label>
+                                <input class="form-control form-group input--style-4 input-number" type="password"
+                                    id="password" name="password" formControlName="password"  />
+                                <span class="invalid-feedback">Contraseña, no puede estar en blanco</span>
+                            </div>
+
+                            <div class="col-2">
+                                <label for="password"> Confirmar Contraseña </label>
+                                <input class="form-control form-group input--style-4 input-number" type="confipassword"
+                                    id="confipassword" name="confipassword" formControlName="confipassword" />
+                                <span class="invalid-feedback">Contraseña, no puede estar en blanco</span>
+                            </div>
+                        </div>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group mayus form-group">
                                     <label class="label">Región</label>
-                                    <input class="input--style-4" type="text" id="region" name="region" maxlength="40"
-                                        disabled="">
+                                    <input formControlName="region" class="input--style-4" type="text" id="region"
+                                        name="region" maxlength="40">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="input-group">
+                                <div class="input-group form-group">
                                     <label class="label">Provincia</label>
-                                    <input class="input--style-4" type="text" id="provincia" name="provincia"
-                                        maxlength="40" disabled="">
+                                    <input formControlName="provincia" class="input--style-4" type="text" id="provincia"
+                                        name="provincia" maxlength="40">
                                 </div>
                             </div>
 
                             <div class="col-2">
-                                <div class="input-group">
+                                <div class="input-group form-group">
                                     <label class="label">Distrito</label>
-                                    <input class="input--style-4" type="text" id="distrito" name="distrito"
-                                        maxlength="100" disabled="">
+                                    <input formControlName="distrito" class="input--style-4" type="text" id="distrito"
+                                        name="distrito" maxlength="100">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="input-group">
+                                <div class="input-group form-group">
                                     <label class="label">Dirección</label>
-                                    <input class="input--style-4" type="text" id="direccion" name="direccion"
-                                        maxlength="100" disabled="">
+                                    <input formControlName="direccion" class="input--style-4" type="text" id="direccion"
+                                        name="direccion" maxlength="100">
                                 </div>
                             </div>
 
-
-
-                        </div>
-
-
-                        <hr>
-                        <br>
-
-
-
-
-
-                        <br>
-
-                        <div class="input-group">
-                            <label class="label">Escuela</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="valorescuelas" id="valorescuelas" disabled="" required="" tabindex="-1"
-                                    class="select2-hidden-accessible" aria-hidden="true">
-                                    <option> </option>
-
-                                    <option value="E0001">EGEC PERÚ</option>
-                                    <option value="E0004">INEG</option>
-                                    <option value="E0005">IPERAG</option>
-                                    <option value="E0003">ESLAE</option>
-                                    <option value="E0011">ESGOB</option>
-                                    <option value="E0010">EFG</option>
-                                    <option value="E0012">INGEP</option>
-                                    <option value="E0002">DIAMOND CAPITAL GROUP</option>
-                                    <option value="E0013">DCG-VIRTUAL</option>
-                                    <option value="E0018">EGED </option>
-                                    <option value="E0006">ESFOR</option>
-                                    <option value="E0007">ESLIDER</option>
-                                    <option value="E0008">ESNAG</option>
-                                    <option value="E0015">INMED</option>
-                                    <option value="E0009">IPEMIC</option>
-                                    <!--
-                                <option>Gestión Pública</option>
-                                <option>Recursos Humanos</option>
-                                <option>Contrataciones del Estado</option>
-                                -->
-
-
-                                </select><span
-                                    class="select2 select2-container select2-container--default select2-container--disabled"
-                                    dir="ltr" style="width: 198px;"><span class="selection"><span
-                                            class="select2-selection select2-selection--single" role="combobox"
-                                            aria-haspopup="true" aria-expanded="false" tabindex="-1"
-                                            aria-labelledby="select2-valorescuelas-container"><span
-                                                class="select2-selection__rendered" id="select2-valorescuelas-container"
-                                                title=" "> </span><span class="select2-selection__arrow"
-                                                role="presentation"><b
-                                                    role="presentation"></b></span></span></span><span
-                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                <div class="select-dropdown"></div>
+                            <div class="form-check">
+                                <input type="checkbox" id="condicionesx" style="width: 20px;">
+                                <label class="form-check-label" for="materialUnchecked">
+                                    <a href="terminos/TerminosyCondiciones.pdf" target="_blank"
+                                        style="text-decoration: none;">
+                                        *Aceptar términos y condiciones.
+                                    </a>
+                                </label>
+                            </div>
+                            <div class="w33">
+                                <div class="p-t-15 center">
+                                    <button class="btn btn--radius-2 btn--blue" id="registrar"
+                                        type="submit">Registrar</button>
+                                </div>
                             </div>
                         </div>
-
-
-
-
-                        <div class="input-group">
-                            <label class="label">Diplomados</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select multiple="" name="valordiplomados[]" id="valordiplomados" disabled=""
-                                    tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
-                                    <!-- <option selected="selected" value="valorpordefecto">Seleccione</option> -->
-
-                                    <option value="GP3">Gestión Pública - GP3</option>
-                                    <option value="CE3">Contrataciones del Estado</option>
-                                    <option value="RRHH2">Recursos Humanos y Ley Servir</option>
-                                    <option value="SIAF2">SIAF - Sistema Integrado de Administración Financiera</option>
-                                    <option value="SIGA2">SIGA - Sistema Integrado de Gestión Administrativa</option>
-                                    <option value="ADGM">Administración y Gestión Municipal</option>
-                                    <option value="IPE">Programación Multianual y gestión de Inversiones (Invierte.pe)
-                                    </option>
-                                    <option value="ACES">Análisis de la Coyuntura Económica-Social</option>
-                                    <option value="APGC">Administración Pública y Gestión de la Calidad</option>
-                                    <option value="APP">Asociaciones Público-Privadas (APP)</option>
-                                    <option value="ASJ">Administración del Sistema de Justicia</option>
-                                    <option value="ATDEN">Sistema Nacional de Atención de Denuncias</option>
-                                    <option value="CADC">Capacitación y Desarrollo de Competencias</option>
-                                    <option value="CGB">Control Gubernamental</option>
-                                    <option value="CNTC">Contratos Civiles</option>
-                                    <option value="COEF">Comunicación Efectiva</option>
-                                    <option value="DACF">Delitos contra la Administración Pública y Corrupción de
-                                        Funcionarios</option>
-                                    <option value="DAP">Derecho Administrativo y PAS</option>
-                                    <option value="DCON">Derecho Constitucional</option>
-                                    <option value="DG">Dirección Gerencial</option>
-                                    <option value="DHB">Desarrollo de Habilidades Blandas</option>
-                                    <option value="DMUN">Derecho Municipal</option>
-                                    <option value="DPCON">Derecho de Protección al Consumidor</option>
-                                    <option value="DPP">Derecho Penal y Procesal Penal</option>
-                                    <option value="DPROP">Derecho Procesal Penal</option>
-                                    <option value="DPRP">Derecho Previsional y Regímenes Pensionarios AFP-ONP</option>
-                                    <option value="DSOC">Derecho Societario</option>
-                                    <option value="EDEEF">Estrategias Didácticas para la Enseñanza de la Educación
-                                        Física
-                                    </option>
-                                    <option value="ELTS">Elaboración de Tesis</option>
-                                    <option value="EMBL">Enseñanza de la Metodología Educativa Blended Learning</option>
-                                    <option value="FEPE">Formulación y Evaluación de Proyectos Educativos</option>
-                                    <option value="FNF">Finanzas para no Financieros</option>
-                                    <option value="GAVM">Gestión de Aulas Virtuales en Moodle</option>
-                                    <option value="GC">Gestión Comercial</option>
-                                    <option value="GERF">Gerencia Financiera</option>
-                                    <option value="GPCS">Gestión Pública en Conflictos Sociales</option>
-                                    <option value="GRS">Gestión de Redes Sociales</option>
-                                    <option value="GTL">Gestión del Talento y Liderazgo</option>
-                                    <option value="HABD">Habilidades Directivas</option>
-                                    <option value="HGPE">Herramientas Gerenciales para la Enseñanza</option>
-                                    <option value="HT">Habilidades Tecnológicas</option>
-                                    <option value="HWEV">Herramientas Web para la Enseñanza</option>
-                                    <option value="IB">Inglés Básico</option>
-                                    <option value="IEYL">Inteligencia Emocional y Liderazgo</option>
-                                    <option value="MINV">Metodologia de la Investigación</option>
-                                    <option value="MKDG">Marketing Digital</option>
-                                    <option value="NCPP">Nuevo Código Procesal Penal</option>
-                                    <option value="OBRI">Obras por Impuestos</option>
-                                    <option value="OFFICE">Ofimática Profesional</option>
-                                    <option value="PADS">Procedimiento Administrativo Disciplinario Sancionador</option>
-                                    <option value="PPGE">Políticas Públicas y Gestión Estatal</option>
-                                    <option value="SADE">Sistemas Administrativos del Estado </option>
-                                    <option value="SEACE">SEACE - Sistema Electrónico de contrataciones del Estado
-                                    </option>
-                                    <option value="SEP">Selección y Evaluación de Personal</option>
-                                    <option value="SF">Sistema Financiero</option>
-                                    <option value="SSOMA">Gestión de Seguridad, Salud Ocupacional y Medio Ambiente
-                                        (SSOMA)
-                                    </option>
-                                    <option value="SST">Seguridad y salud en el trabajo (Ocupacional)</option>
-                                    <option value="TDAH">Entorno Virtual para Estudiantes con TDAH</option>
-                                    <option value="TPEV">Técnicas Pedagógicas en la Enseñanza Virtual</option>
-                                    <option value="TRIE">Tributación Empresarial</option>
-                                </select><span
-                                    class="select2 select2-container select2-container--default select2-container--disabled"
-                                    dir="ltr" style="width: 437.641px;"><span class="selection"><span
-                                            class="select2-selection select2-selection--multiple" role="combobox"
-                                            aria-haspopup="true" aria-expanded="false" tabindex="-1">
-                                            <ul class="select2-selection__rendered">
-                                                <li class="select2-search select2-search--inline"><input
-                                                        class="select2-search__field" type="search" tabindex="0"
-                                                        autocomplete="off" autocorrect="off" autocapitalize="none"
-                                                        spellcheck="false" role="textbox" aria-autocomplete="list"
-                                                        placeholder="" disabled="" style="width: 0.75em;"></li>
-                                            </ul>
-                                        </span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
-
-
-                        <div class="form-check">
-                            <input type="checkbox" id="condicionesx" style="width: 20px;">
-                            <label class="form-check-label" for="materialUnchecked">
-                                <a href="terminos/TerminosyCondiciones.pdf" target="_blank"
-                                    style="text-decoration: none;">
-                                    *Ver términos y condiciones.
-                                </a>
-                            </label>
-                        </div>
-
-                        <!--
-                                <option>Gestión Pública</option>
-                                <option>Recursos Humanos</option>
-                                <option>Contrataciones del Estado</option>
-                                -->
-
-
-
-                        <div class="select-dropdown"></div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<br>
+<br>

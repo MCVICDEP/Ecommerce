@@ -7,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogComponent implements OnInit {
 
-  model:any={}
+  model: any = {}
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  login(){
+  login() {
     console.log(this.model)
   }
 }
