@@ -16,6 +16,7 @@ import { LogComponent } from './componentes/log/log.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { NotFoundComponent } from './componentes/shared/not-found/not-found.component';
 import { DetallesComponent } from './componentes/shopping-cart/lista/producto/detalles/detalles.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DetallesComponent } from './componentes/shopping-cart/lista/producto/de
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

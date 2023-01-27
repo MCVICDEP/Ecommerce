@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-log',
@@ -8,13 +7,14 @@ import { NgForm } from '@angular/forms';
 })
 export class LogComponent implements OnInit {
 
+  model:any={}
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  login(form:NgForm){
-    const email = form.value.email
-    const pass = form.value.password
+  login(){
+    console.log(this.model)
   }
 }

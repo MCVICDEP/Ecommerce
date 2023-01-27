@@ -9,7 +9,7 @@ import { NotFoundComponent } from './componentes/shared/not-found/not-found.comp
 const routes: Routes = [
   {path: '', redirectTo:'/compra', pathMatch:'full'},
   {path:'login', component: LogComponent},
-  {path: 'register', component: RegistroComponent},
+  {path: 'registro', component: RegistroComponent},
   {path: 'compra', component: ShoppingCartComponent},
   {path: 'detalle', component: DetallesComponent},
   {path: '**', component: NotFoundComponent}
