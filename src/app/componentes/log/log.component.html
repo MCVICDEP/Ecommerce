@@ -4,32 +4,41 @@
       <div class="card card-4" style="background-color: white; opacity : 0.97;">
         <div class="card-header text-center">
           <br>
-          <b><h2>INICIAR SESIÓN</h2></b>
+          <b>
+            <h2>INICIAR SESIÓN</h2>
+          </b>
           <br>
         </div>
         <div class="card-body">
-          <form #loginForm="ngForm" (submit)="loginForm.valid && login()">
+          <form (ngSubmit)="login()" name="loginForm" [formGroup]="loginForm">
             <div class="col-2">
-              <div class="input-group">
+              <div class="input-group form-group">
                 <label class="label">Correo Electrónico</label>
-                <input class="input--style-4 " type="email" id="username" name="username" maxlength="100"
+                <input class="input--style-4" type="email" id="email" name="email" maxlength="100"
                   pattern="[a-zA-Z0-9!#$%&amp;'*_+-]([\.]?[a-zA-Z0-9!#$%&amp;'*_+-])+@[a-zA-Z0-9]([^@&amp;%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?"
-                  [ngClass]="{ 'is-invalid': username.touched && username.invalid}" #username="ngModel"
-                  [(ngModel)]="model.username" autofocus>
-                  <span class="invalid-feedback">Por favor, respetar el formato estaablecido: example@example.com/pe/es</span>
+                  formControlName="email"
+                  [ngClass]="{'is-invalid' : loginForm.get('email')!.touched && loginForm.get('email')!.invalid}" />
+                <span class="invalid-feedback">
+                  <span *ngIf="loginForm.get('email')?.hasError('required')">Correo Electronico, no puede estar en
+                    blanco</span>
+                  <span *ngIf="loginForm.get('email')?.hasError('pattern')">Por favor, respetar el formato establecido:
+                    example@example.com/pe/es</span>
+                </span>
               </div>
             </div>
 
             <div class="row row-space">
               <div class="col-2">
                 <label class="label" for="password"> Contraseña </label>
-                <input class="input--style-4 input-number" type="password" id="password" name="password" [ngClass]="{ 'is-invalid': password.touched&& password.invalid}" #password="ngModel"
-                [(ngModel)]="model.password" required/>
+                <input class="input--style-4 input-number" type="password" id="password" name="password"
+                  formControlName="password"
+                  [ngClass]="{'is-invalid' : loginForm.get('password')!.touched && loginForm.get('password')!.invalid}" />
                 <span class="invalid-feedback">Contraseña, no puede estar en blanco</span>
               </div>
             </div>
             <div class="form-check">
-              <input type="checkbox" id="remember" name="remember" #remember="ngModel" [(ngModel)]="model.remember" style="width: 20px;">
+              <input type="checkbox" id="remember" name="remember"
+                style="width: 20px;">
               <label class="form-check-label" for="materialUnchecked">
                 <br>
                 <a target="_blank" class="ml-1" for="remember" style="text-decoration: none;">
@@ -42,16 +51,22 @@
             <div class="w-33">
               <div class="center">
                 <button class="btn btn--radius-2 btn--blue" id="registrar" type="submit"
-                [disabled]="loginForm.invalid">Iniciar Sesión
+                  [disabled]="loginForm.invalid">Iniciar Sesión
                 </button>
               </div>
               <br>
-            <b><a routerLink="/registro" class="ml-1 black" for="remember" style="text-decoration: none"><span> ¿Aún no estás registrado?</span>
-                Registrate aquí
-              </a></b>             
-            </div>           
+              <b><a routerLink="/registro" class="ml-1 black" for="remember" style="text-decoration: none"><span> ¿Aún
+                    no estás registrado?</span>
+                  Registrate aquí
+                </a></b>
+            </div>
           </form>
+          <img class="img_potente"
+            src="https://img.freepik.com/vector-gratis/aplicacion-telefonos-inteligentes-pagos-moviles-computadora-transaccion-linea-proceso-compras-linea-telefono-inteligente-diseno-isometrico-ilustracion-dibujos-animados-vecter_1150-62441.jpg?w=740&t=st=1674881695~exp=1674882295~hmac=859b4de4c5ddc475210f00514e1c9fcb5b8935f6ae81c79a5d64c5aab6435f4d"
+            width="35%">
         </div>
       </div>
+       
     </div>
+      
   </div>

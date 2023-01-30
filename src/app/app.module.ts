@@ -17,6 +17,7 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { NotFoundComponent } from './componentes/shared/not-found/not-found.component';
 import { DetallesComponent } from './componentes/shopping-cart/lista/producto/detalles/detalles.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './componentes/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LogComponent,
     RegistroComponent,
     NotFoundComponent,
-    DetallesComponent
+    DetallesComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
