@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-md- offset-md-">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4" style="background-color: white; opacity : 0.97;">
+                <div class="card-header text-center">
+                    <br>
+                    <h2 mat-dialog-title>{{tituloAccion}} USUARIOS</h2>
+                    <br>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="formularioUsuario">
+                        <div class=" row row-space">
+                            <div class="col-2">
+                                <div class="input-group form-group">
+                                    <label class="label">DNI</label>
+                                    <input formControlName="dni" class="input--style-4 input-number alert alert-danger"
+                                        type="text" name="dni" id="dni" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col">
+                                <div class="input-group form-group">
+                                    <label class="label">Nombres y Apellidos</label>
+                                    <input formControlName="nombres" class="input--style-4" type="text" id="nombres"
+                                        name="nombres" style="background-color: #e5e5e5" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group form-group">
+                                    <label class="label">Correo Electrónico</label>
+                                    <input class="input--style-4" type="email" id="email" name="email" maxlength="100"
+                                        pattern="[a-zA-Z0-9!#$%&amp;'*_+-]([\.]?[a-zA-Z0-9!#$%&amp;'*_+-])+@[a-zA-Z0-9]([^@&amp;%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?"
+                                        formControlName="email" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group form-group">
+                                    <label class="label">Celular</label>
+                                    <input class="input--style-4 input-number" type="text" id="celular" name="celular"
+                                        minlength="9" maxlength="9" formControlName="celular" />
+                                </div>
+                            </div>
+                        </div>                       
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <label> Rol </label>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                <select formControlName="idRol" class="select2-hidden-accessible" aria-hidden="true">
+                                    <option *ngFor="let item of listaRoles" [value]="item.idrol">{{item.descripcionRol}}</option>
+                                </select>
+                            </div>
+                            </div>
+
+                            
+
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <label for="password"> Contraseña </label>
+                                    <input class="form-control form-group input--style-4" type="password" id="password"
+                                        name="password" formControlName="password"/>
+                                </div>
+                                <div class="col-2">
+                                    <label for="password"> Confirmar Contraseña </label>
+                                    <input class="form-control form-group input--style-4" type="password"
+                                        id="confipassword" name="confipassword" formControlName="confipassword"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>

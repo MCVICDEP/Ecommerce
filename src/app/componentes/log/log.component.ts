@@ -1,7 +1,9 @@
+import { UtilidadService } from './../shared/utilidad.service';
+import { Login } from './../../interfaces/login';
+import { UsuarioService } from './../../services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsuarioServicioService } from 'src/app/services/usuarioservicio.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 
@@ -21,7 +23,8 @@ export class LogComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private _usuarioServicio: UsuarioServicioService
+    private _utilidadServicio : UtilidadService,
+    private _usuarioServicio: UsuarioService
   ) {
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
@@ -34,18 +37,19 @@ export class LogComponent implements OnInit {
 
   login() {
 
-    this.loading = true;
+    const req : Login = {
+      correo : this.loginForm.value.email,
+      password : this.loginForm.value.password
+    } 
 
-    const correo = this.loginForm.value.email;
-    const password = this.loginForm.value.password;
 
-    this._usuarioServicio.getIniciarSesion(correo, password).subscribe({
+    this._usuarioServicio.iniciarSesion(req).subscribe({
       next: (data) => {
         if (data.status) {
-          alert(data.status);
+          this._utilidadServicio.guardarSesionUsuario(data.value)
           this.router.navigate(['admin'])
         } else {
-          // alert("ERROR, NO SE ENCONTRARON COINCIDENCIAS")
+          alert("ERROR, NO SE ENCONTRARON COINCIDENCIAS")
         }
       },
     }
